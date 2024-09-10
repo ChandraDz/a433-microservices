@@ -1,17 +1,24 @@
+# versi dari docker compose kalian juga bisa mengosongkan versinya
 version: '3.1'
-
+# untuk mnentukan service item-app dan item-db
 services:
  item-db:
+ # kita akan menggunakan image mongo:3 dari docker hub
   image: mongo:3
+  # menggunakan volume app-db dengan target /data/db 
   volumes:
    - app-db:/data/db
+   # merestart container agar selalu terestart ketika terhenti
   restart: always
 
  item-app:
+# menggunakan image "username kalian di dockerhub"/item-app:v1   
   image: zeandz/item-app:v1
+# menentukan port yang akan dipakai
   ports:
    - 80:8080
+# merestart container agar selalu terestart ketika terhenti   
   restart: always
-
+# menggunakan volume app-db
 volumes:
  app-db:
