@@ -22,3 +22,4 @@ services:
 # menggunakan volume app-db
 volumes:
  app-db:
+# nah setelah kalian selesai dengan script compose kalian harus mengaktifkannya di terminal dengan perintah : docker compose up -d 
